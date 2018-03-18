@@ -1,0 +1,39 @@
+#Bl4ckCl0v3r
+#Kali_Linux_Indonesian
+
+Bahan yang diperlukan
+a. Flashdisk 
+b. iso Kali linux Rolling version
+
+Proses Repair Grub
+1. Download Win32DiskImager ( cari aja di Googgle dan download )
+2. Buat bootable menggunakan Win32DiskImager 
+3. Setelah buat bootable restart pc / laptop
+4. Jalankan Kali Linux Live AMD ( paling atas )
+5. Setelah Muncul tampilan Desktop Kali Linux Live
+6. Buka terminal lalu Ketik 
+
+   root@kali:~# fdisk -l
+   
+7. lalu pilih partisi yang type nya Linux (( bukan Linux swap / Solaris ))
+8. lalu ketikkan kode perintah yang ada dibawah ini :
+   root@kali:~# mount /dev/sdaX /mnt
+   root@kali:~# mount --bind /dev /mnt/dev
+   root@kali:~# mount --bind /dev/pts /mnt/dev/pts
+   root@kali:~# mount --bind /proc /mnt/proc
+   root@kali:~# mount --bind /sys /mnt/sys
+   root@kali:~# chroot /mnt
+   root@kali:/# grub-install /dev/sda
+   root@kali:/# update-grub
+   root@kali:~# exit
+   root@kali:~# umount /mnt/dev/pts
+   root@kali:~# umount /mnt/dev
+   root@kali:~# umount /mnt/proc
+   root@kali:~# umount /mnt/sys
+   root@kali:~# umount /mnt
+   
+9. setelah semua selesai silahkan restart ( reboot ) komputer kalian
+10. cara untuk perbaiki grub kali linux rolling version ini susah saya coba sendiri dan berhasil
+
+Link sumber :
+https://forums.kali.org/showthread.php?20559-How-To-Repair-Kali-Linux-Grub-With-Kali-Linux-Live-Cd-Dual-Boot-With-Windows-7
