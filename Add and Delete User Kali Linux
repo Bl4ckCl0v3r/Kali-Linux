@@ -1,0 +1,41 @@
+Berikut ini adalah cara Menambah user  di Kali Linux
+1. Buka terminal dan ketik berikut untuk membuat pengguna baru (ganti anher dengan nama pengguna yang Anda inginkan)
+
+   root@kali:~# useradd -m namauser
+   keterangan:
+   useradd   : perintah untuk membuat user account baru yang tidak terdapat pada sistem
+   -m        : perintah untuk membuat direktori home yang biasanya /home/username
+   rahman    : nama user yang ingin dibuat
+
+2. selanjutnya buat password untuk user yang baru di buat
+
+   root@kali:~# passwd namauser
+   
+3. Masukkan password yang diinginkan dua kali
+
+4. Tambahkan pengguna ke group sudo (agar pengguna dapat mengkesekusi aplikasi yang membutuhkan hak akses root )
+
+   root@kali:~# usermod -a -G sudo namauser
+   
+   keterangan :
+   usermod    : perintah yang digunakan untuk memodifikasi user acount yang ada pada sistem linux
+   -a -G sudo : perintah untuk menambah ke group sudo
+   rahman     : nama user
+   
+5. kemudian ketikkan perintah di bawah ini untuk menambahkan user ke default shell
+
+   root@kali:~# chsh -s /bin/bash namauser
+   
+6. Selanjutnya tinggal logout dan coba login dengan user baru.
+
+Dibawah ini saya tambahkan juga cara menghapus user di kali linux
+
+1. Untuk menghapus user beserta folder user di kali linux,  ketikkan perintah
+
+   root@kali:~# userdel -r namauser
+
+2. apabila ingin menghapus user saja tanpa menghapus foldernya cukup ketikkan
+
+   root@kali:~# userdel namauser
+   
+3. Selesai, Selamat Menikmati
