@@ -1,0 +1,29 @@
+# Kali Linux Rolling Version
+# Download Manager Uget and Plugin Aria2
+
+1. pertama tama kita harus menginstall uget dan aria2 dengan cara :
+   root@kali:~# apt-get install uget aria2
+   
+2. setelah selesai maka buka uget 
+   pilih internet -> uGet
+   
+3. setelah terbuka kita ganti plugin uget nya
+   Pilih Edit -> Setting -> Plug-in -> lihat paling atas ganti curl dengan aria2 -> lalu OK
+   
+4. setelah terpasang aria2 sebagai plugin selanjutnya buka browser lalu pasang uget integration
+   karena saya pakai mozilla jadi ini link nya :
+   https://addons.mozilla.org/en-US/firefox/addon/ugetintegration/
+   dan jika pakai chrome :
+   https://chrome.google.com/webstore/detail/uget-integration/efjgjleilhflffpbnkaofpmdnajdpepi 
+   atau pake yg di web store sih cari aja uget integration
+   
+5. nah jika terpasang namun warna add ons uget nya warna merah maka ada 1 langkah lagi 
+6. buka terminal ketik ini :
+   root@kali:~# wget https://raw.githubusercontent.com/ugetdm/uget-integrator/master/install/linux/install_uget_integrator.sh
+   root@kali:~# chmod +x install_uget_integrator.sh
+   root@kali:~# ./install_uget_integrator.sh
+7. close mozila atau chrome nya lalu buka lagi dan jika sudah menjadi warna hijau maka download manager linux siap digunakan
+
+referensi 
+https://github.com/ugetdm/uget-integrator/wiki/Installation
+http://ugetdm.com/
