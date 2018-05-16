@@ -34,6 +34,19 @@ Proses Repair Grub
    root@kali:~# umount /mnt/sys
    root@kali:~# umount /mnt
    
+   Ket : Yang /dev/sdaX
+   X nya adalah angka partisi linux mu misal :
+   
+   Device     Boot     Start       End   Sectors  Size Id Type
+/dev/sda1  *         2048 104859647 104857600   50G  7 HPFS/NTFS/exFAT
+/dev/sda2       104859648 272631807 167772160   80G  7 HPFS/NTFS/exFAT
+/dev/sda3       272631808 457365503 184733696 88.1G  7 HPFS/NTFS/exFAT
+/dev/sda4       457367550 625141759 167774210   80G  5 Extended
+/dev/sda5       457367552 617125887 159758336 76.2G 83 Linux
+/dev/sda6       617127936 625141759   8013824  3.8G 82 Linux swap / Solaris
+
+nah maka partisinya adalah /dev/sda5
+   
 9. setelah semua selesai silahkan restart ( reboot ) komputer kalian
 10. cara untuk perbaiki grub kali linux rolling version ini susah saya coba sendiri dan berhasil
 
